@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー - PressNote BP</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap');
+
+    :root {
+      --red:    #C0392B;
+      --dark:   #1a1a2e;
+      --mid:    #2d2d44;
+      --light:  #f7f5f2;
+      --accent: #e8e0d5;
+      --text:   #2c2c2c;
+      --muted:  #666;
+      --border: #ddd8d0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    header {
+      background: var(--dark);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -40px; left: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(192,57,43,0.18);
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -30px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(192,57,43,0.12);
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .app-badge {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+    }
+    header h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.05em;
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .intro-box {
+      background: #fff;
+      border-left: 4px solid var(--red);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.9;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      background: var(--red);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 13px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    p { margin-bottom: 12px; color: #333; }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .card p { margin: 0; font-size: 14px; color: #555; }
+
+    .highlight-box {
+      background: #fff8f7;
+      border: 1px solid #f5c6c2;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+    }
+    .highlight-box .icon { font-size: 20px; margin-bottom: 6px; display: block; }
+    .highlight-box p { font-size: 14px; color: #555; margin: 0; }
+    .highlight-box strong { color: var(--red); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    th {
+      background: var(--dark);
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 500;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #fafaf8; }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 12px;
+    }
+    ul li {
+      padding: 6px 0 6px 22px;
+      position: relative;
+      font-size: 14px;
+      color: #444;
+      border-bottom: 1px dashed #eee;
+    }
+    ul li:last-child { border-bottom: none; }
+    ul li::before {
+      content: '▸';
+      color: var(--red);
+      position: absolute;
+      left: 0;
+    }
+
+    .contact-box {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 16px;
+    }
+    .contact-box a {
+      color: #f4a89a;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-box a:hover { text-decoration: underline; }
+    .contact-box p { color: rgba(255,255,255,0.8); margin: 0; font-size: 14px; }
+
+    .update-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 22px; }
+      .container { padding: 32px 16px 60px; }
+      h2 { font-size: 16px; }
+      th, td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="app-badge">PressNote BP</span>
+    <h1>プライバシーポリシー</h1>
+    <p>Privacy Policy &nbsp;|&nbsp; 最終更新日: 2025年6月1日</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="intro-box">
+    BunDev（以下「当開発者」）は、Android アプリ「PressNote BP」（以下「本アプリ」）をご利用いただくにあたり、ユーザーの個人情報・プライバシーの保護を最重要事項と考えています。本ポリシーでは、情報の取り扱い方針を明確にご説明します。
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <h2><span class="num">1</span>収集する情報</h2>
+    <p>本アプリが取り扱う情報は以下のとおりです。</p>
+
+    <div class="card">
+      <div class="card-title">① ユーザーが入力するデータ（健康情報）</div>
+      <p>血圧値（収縮期・拡張期）、脈拍数、計測時刻区分（朝・昼・夜）、メモ。これらは<strong>お使いの端末内にのみ保存</strong>され、当開発者のサーバーへは送信されません。</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">② クラッシュレポート（Firebase Crashlytics）</div>
+      <p>アプリが異常終了した場合、端末の機種名・OSバージョン・エラーのスタックトレース等が Google Firebase を通じて収集されます。氏名・メールアドレス等の個人を特定できる情報は含まれません。</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">③ 利用状況の分析（Firebase Analytics）</div>
+      <p>画面の遷移回数など匿名の利用統計が Google Firebase を通じて収集されます。個人を特定できる情報は含まれません。</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">④ 購入情報（Google Play Billing）</div>
+      <p>Pro版購入の確認に Google Play Billing を利用します。決済情報は Google が処理し、当開発者はカード番号等を取得・保存しません。</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">⑤ Googleドライブへのバックアップ（ユーザーの任意操作）</div>
+      <p>設定画面でバックアップ機能を有効にした場合、ユーザーが明示的に操作したタイミングでのみ、記録データがユーザー自身の Google ドライブに保存されます。当開発者はこのデータにアクセスしません。</p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2><span class="num">2</span>情報の利用目的</h2>
+    <table>
+      <thead>
+        <tr><th>情報の種類</th><th>利用目的</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>健康記録データ</td><td>アプリ内のグラフ・カレンダー表示、PDF/CSV出力機能の提供</td></tr>
+        <tr><td>クラッシュレポート</td><td>バグの特定・修正、アプリの品質改善</td></tr>
+        <tr><td>利用統計</td><td>機能改善・ユーザー体験向上</td></tr>
+        <tr><td>購入情報</td><td>Pro版機能のアンロック確認</td></tr>
+        <tr><td>Googleドライブデータ</td><td>機種変更時のデータ復元（ユーザー操作時のみ）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2><span class="num">3</span>第三者への情報提供</h2>
+    <p>当開発者は、以下の場合を除きユーザーの情報を第三者に提供しません。</p>
+    <ul>
+      <li>法令に基づき開示が必要な場合</li>
+      <li>Firebase（Google LLC）へのクラッシュ・利用統計データの送信（匿名化済み）</li>
+      <li>Google Play Billing を通じた決済処理（Google LLC が担当）</li>
+    </ul>
+    <p>上記サービスのプライバシーポリシーは <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a> をご参照ください。</p>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2><span class="num">4</span>端末内データの取り扱い</h2>
+    <div class="highlight-box">
+      <span class="icon">🔒</span>
+      <p>入力された血圧・脈拍データは<strong>すべてお使いの端末内（Room データベース）にのみ保存</strong>されます。当開発者のサーバーへの送信は一切行いません。アプリをアンインストールするとデータは削除されます。バックアップには Googleドライブ機能をご利用ください。</p>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <h2><span class="num">5</span>通知・権限の取り扱い</h2>
+    <table>
+      <thead>
+        <tr><th>権限</th><th>用途</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>通知（POST_NOTIFICATIONS）</td><td>朝・夕方の血圧測定リマインダー通知</td></tr>
+        <tr><td>正確なアラーム（SCHEDULE_EXACT_ALARM）</td><td>指定時刻どおりに通知を届けるため</td></tr>
+        <tr><td>起動完了受信（RECEIVE_BOOT_COMPLETED）</td><td>端末再起動後に通知スケジュールを復元するため</td></tr>
+        <tr><td>インターネット（INTERNET）</td><td>Firebase・Google Play Billing・Googleドライブとの通信</td></tr>
+        <tr><td>バイブレーション（VIBRATE）</td><td>通知のバイブレーション</td></tr>
+      </tbody>
+    </table>
+    <p>各権限はアプリの機能提供のみに使用し、不要な情報収集には使用しません。</p>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2><span class="num">6</span>子どものプライバシー</h2>
+    <p>本アプリは13歳未満の方を対象としていません。13歳未満の方からの個人情報収集は意図しておらず、万が一収集が判明した場合は速やかに削除します。</p>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <h2><span class="num">7</span>プライバシーポリシーの変更</h2>
+    <p>本ポリシーは必要に応じて改定される場合があります。重要な変更がある場合は、アプリ内またはこのページにてお知らせします。定期的にご確認いただくことをお勧めします。</p>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2><span class="num">8</span>お問い合わせ</h2>
+    <div class="contact-box">
+      <p>プライバシーに関するご質問・ご要望は下記までご連絡ください。</p>
+      <br>
+      <p>開発者：BunDev</p>
+      <p>メールアドレス：<a href="mailto:support.bun.apps@gmail.com">support.bun.apps@gmail.com</a></p>
+    </div>
+  </section>
+
+  <div class="update-note">
+    制定日：2025年6月1日 &nbsp;|&nbsp; 最終更新：2025年6月1日<br>
+    &copy; BunDev. All rights reserved.
+  </div>
+
+</div>
+</body>
+</html>

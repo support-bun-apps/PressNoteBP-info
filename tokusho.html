@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>特定商取引法に基づく表記 - PressNote BP</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap');
+
+    :root {
+      --green:  #1a6b45;
+      --dark:   #0d2b1a;
+      --light:  #f3f9f5;
+      --accent: #d5ede2;
+      --text:   #1c2b22;
+      --muted:  #668;
+      --border: #c5ddd0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    header {
+      background: var(--dark);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50px; left: -40px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(26,107,69,0.3);
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -30px;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: rgba(26,107,69,0.2);
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .app-badge {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    header h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.05em;
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .intro-box {
+      background: #fff;
+      border-left: 4px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px;
+      margin-bottom: 40px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.85;
+    }
+
+    .table-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .table-card-title {
+      background: var(--dark);
+      color: #fff;
+      padding: 14px 24px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .table-card-title .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th {
+      width: 38%;
+      background: var(--accent);
+      color: var(--dark);
+      padding: 14px 20px;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: #333;
+      vertical-align: top;
+    }
+    tr:last-child th,
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) th { background: #cce3d6; }
+    tr:nth-child(even) td { background: #fafcfb; }
+
+    .note-box {
+      background: #fff9ed;
+      border: 1px solid #e8d5a0;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-top: 24px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.85;
+    }
+    .note-box .note-title {
+      font-weight: 500;
+      color: #7a5000;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .contact-box {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+    .contact-box a {
+      color: #7dd4a8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-box a:hover { text-decoration: underline; }
+    .contact-box p { color: rgba(255,255,255,0.8); margin: 0; font-size: 14px; line-height: 2; }
+
+    .update-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .placeholder {
+      color: #c0392b;
+      background: #fdecea;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 20px; }
+      .container { padding: 32px 16px 60px; }
+      th { width: 42%; padding: 12px 14px; }
+      td { padding: 12px 14px; }
+    }
+    @media (max-width: 480px) {
+      table, thead, tbody, th, td, tr { display: block; }
+      th {
+        width: 100%;
+        border-bottom: none;
+        padding-bottom: 4px;
+        background: var(--accent) !important;
+        font-size: 12px;
+        color: #1a6b45;
+      }
+      td { padding-top: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="app-badge">PressNote BP</span>
+    <h1>特定商取引法に基づく表記</h1>
+    <p>Specified Commercial Transactions Act &nbsp;|&nbsp; 最終更新日: 2025年6月1日</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="intro-box">
+    特定商取引法（特商法）第11条および第12条の3の規定に基づき、以下の事項を表示します。本表記は Android アプリ「PressNote BP」における Pro版（有料コンテンツ）の販売に関するものです。
+  </div>
+
+  <!-- 販売者情報 -->
+  <div class="table-card">
+    <div class="table-card-title"><span class="dot"></span>販売者情報</div>
+    <table>
+      <tbody>
+        <tr>
+          <th>販売者名</th>
+          <td>BunDev</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>〒105-0013<br>東京都港区浜松町２丁目２番１５号<br>浜松町ダイヤビル２Ｆ</td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td>メールにてお問い合わせください（開示請求には対応いたします）</td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td><a href="mailto:support.bun.apps@gmail.com">support.bun.apps@gmail.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 商品情報 -->
+  <div class="table-card">
+    <div class="table-card-title"><span class="dot"></span>商品・サービス内容</div>
+    <table>
+      <tbody>
+        <tr>
+          <th>商品名</th>
+          <td>PressNote BP Pro版（買い切り）</td>
+        </tr>
+        <tr>
+          <th>内容</th>
+          <td>
+            以下の機能のアンロック（永続）<br>
+            ・血圧記録のPDF出力・印刷・共有<br>
+            ・血圧記録のCSVエクスポート<br>
+            ・アプリテーマカラーの変更<br>
+            ・ホーム画面ウィジェットの使用
+          </td>
+        </tr>
+        <tr>
+          <th>対応端末</th>
+          <td>Android 7.0（API 24）以降を搭載したスマートフォン・タブレット</td>
+        </tr>
+        <tr>
+          <th>提供形態</th>
+          <td>アプリ内課金（デジタルコンテンツ）。ダウンロード・物品の発送はありません</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 料金・支払い -->
+  <div class="table-card">
+    <div class="table-card-title"><span class="dot"></span>料金・支払い</div>
+    <table>
+      <tbody>
+        <tr>
+          <th>販売価格</th>
+          <td>¥500（税込）<br>※価格は予告なく変更される場合があります。購入時点の Google Play に表示される金額が適用されます</td>
+        </tr>
+        <tr>
+          <th>支払い方法</th>
+          <td>Google Play でのお支払い（クレジットカード・デビットカード・キャリア決済・Google Play ギフトカード 等）</td>
+        </tr>
+        <tr>
+          <th>支払い時期</th>
+          <td>Google Play での購入手続き完了時に即時決済</td>
+        </tr>
+        <tr>
+          <th>追加費用</th>
+          <td>なし（一度購入後の追加料金は発生しません）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 解約・返金 -->
+  <div class="table-card">
+    <div class="table-card-title"><span class="dot"></span>キャンセル・返金</div>
+    <table>
+      <tbody>
+        <tr>
+          <th>キャンセルポリシー</th>
+          <td>本商品はデジタルコンテンツのアンロックであり、購入完了後の解約・キャンセルには対応しておりません</td>
+        </tr>
+        <tr>
+          <th>返金ポリシー</th>
+          <td>
+            原則として返金には応じかねます。ただし、Google Play の返金ポリシーに基づく返金申請は Google Play カスタマーサポートまでお問い合わせください<br>
+            <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener" style="font-size:13px;">Google Play 購入の返金について</a>
+          </td>
+        </tr>
+        <tr>
+          <th>購入の復元</th>
+          <td>同一 Google アカウントでのアプリ再インストール・機種変更後は、アプリ内「購入を復元する」機能で Pro版をご利用いただけます（追加費用なし）</td>
+        </tr>
+        <tr>
+          <th>クーリングオフ</th>
+          <td>デジタルコンテンツの提供はご購入直後に開始されるため、特定商取引法のクーリングオフ（8日間の返品権）は適用されません</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 動作環境 -->
+  <div class="table-card">
+    <div class="table-card-title"><span class="dot"></span>動作環境・サービス提供時期</div>
+    <table>
+      <tbody>
+        <tr>
+          <th>サービス提供時期</th>
+          <td>Google Play での購入完了後、即時にアプリ内で利用可能になります</td>
+        </tr>
+        <tr>
+          <th>動作推奨環境</th>
+          <td>Android 7.0 以降、インターネット接続環境（初回認証時）</td>
+        </tr>
+        <tr>
+          <th>サービス継続性</th>
+          <td>当開発者はサービスの継続的な提供に努めますが、サービスの変更・終了の可能性があります。終了時には事前にお知らせします</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note-box">
+    <div class="note-title">📌 電話番号の開示について</div>
+    本アプリは個人開発者による運営のため、電話でのサポートは行っておりません。消費者保護のための法令等により電話番号の開示が必要な場合には、メールにてご請求ください。請求を受けた場合は遅滞なく開示いたします。
+  </div>
+
+  <div class="contact-box">
+    <p>お問い合わせ・開示請求・その他ご不明な点</p>
+    <br>
+    <p>屋号：BunDev</p>
+    <p></p>
+    <p>メールアドレス：<a href="mailto:support.bun.apps@gmail.com">support.bun.apps@gmail.com</a></p>
+    <p>所在地：〒105-0013 東京都港区浜松町２丁目２番１５号 浜松町ダイヤビル２Ｆ</p>
+  </div>
+
+  <div class="update-note">
+    制定日：2025年6月1日 &nbsp;|&nbsp; 最終更新：2025年6月1日<br>
+    &copy; BunDev. All rights reserved.
+  </div>
+
+</div>
+</body>
+</html>

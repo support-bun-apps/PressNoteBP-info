@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>利用規約 - PressNote BP</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap');
+
+    :root {
+      --blue:   #1a5276;
+      --dark:   #0f2233;
+      --mid:    #1e3a54;
+      --light:  #f4f7fa;
+      --accent: #dce9f5;
+      --text:   #1c2b3a;
+      --muted:  #667;
+      --border: #ccd8e5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    header {
+      background: var(--dark);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50px; left: -40px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(26,82,118,0.3);
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -30px;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: rgba(26,82,118,0.2);
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .app-badge {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    header h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.05em;
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .intro-box {
+      background: #fff;
+      border-left: 4px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.9;
+    }
+
+    section { margin-bottom: 40px; }
+
+    h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 13px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    p { margin-bottom: 12px; color: #333; }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .card p { margin: 0; font-size: 14px; color: #555; }
+
+    .warning-box {
+      background: #fff9ed;
+      border: 1px solid #f5dfa0;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+    }
+    .warning-box .icon { font-size: 20px; margin-bottom: 6px; display: block; }
+    .warning-box p { font-size: 14px; color: #555; margin: 0; }
+    .warning-box strong { color: #a04000; }
+
+    .important-box {
+      background: #eef4fc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+    }
+    .important-box p { font-size: 14px; color: #2c4a6e; margin: 0; line-height: 1.8; }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 12px;
+    }
+    ul li {
+      padding: 7px 0 7px 22px;
+      position: relative;
+      font-size: 14px;
+      color: #444;
+      border-bottom: 1px dashed #e0e8f0;
+    }
+    ul li:last-child { border-bottom: none; }
+    ul li::before {
+      content: '▸';
+      color: var(--blue);
+      position: absolute;
+      left: 0;
+    }
+
+    .pro-feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .pro-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 13px;
+      color: #334;
+    }
+    .pro-item .icon { font-size: 20px; display: block; margin-bottom: 6px; }
+    .pro-item strong { color: var(--dark); }
+    @media (max-width: 480px) {
+      .pro-feature-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-box {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 16px;
+    }
+    .contact-box a {
+      color: #7db8e8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-box a:hover { text-decoration: underline; }
+    .contact-box p { color: rgba(255,255,255,0.8); margin: 0; font-size: 14px; }
+
+    .update-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    a { color: var(--blue); }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 22px; }
+      .container { padding: 32px 16px 60px; }
+      h2 { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="app-badge">PressNote BP</span>
+    <h1>利用規約</h1>
+    <p>Terms of Service &nbsp;|&nbsp; 最終更新日: 2025年6月1日</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="intro-box">
+    本利用規約（以下「本規約」）は、BunDev（以下「当開発者」）が提供する Android アプリ「PressNote BP」（以下「本アプリ」）のご利用に関する条件を定めるものです。本アプリをインストールまたはご利用いただいた時点で、本規約に同意したものとみなします。
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <h2><span class="num">1</span>本アプリの目的と免責</h2>
+    <div class="warning-box">
+      <span class="icon">⚕️</span>
+      <p>本アプリは、日常の血圧・脈拍の記録を補助することを目的とした<strong>健康管理支援ツール</strong>です。<strong>医療行為・医学的診断・治療の代替となるものではありません。</strong>体調に異変を感じた場合や、血圧値について不安がある場合は、必ず医療機関を受診してください。</p>
+    </div>
+    <p>本アプリの記録データや表示内容は、医師・医療機関の診断の参考資料としてお使いいただけますが、最終的な医療判断は必ず専門家にお任せください。</p>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2><span class="num">2</span>利用資格</h2>
+    <ul>
+      <li>本アプリは13歳以上の方を対象としています</li>
+      <li>Google Play の利用規約に同意している方がご利用いただけます</li>
+      <li>日本国内法令を遵守してご利用ください</li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2><span class="num">3</span>無料機能と Pro 版機能</h2>
+    <p>本アプリは無料でご利用いただける機能と、買い切り型の「Pro版」でご利用いただける機能で構成されています。</p>
+
+    <div class="card">
+      <div class="card-title">無料機能</div>
+      <p>血圧・脈拍の記録（朝・昼・夜）、グラフ表示（7日・30日・90日）、カレンダー表示、メモ記録、通知リマインダー（朝・夕方）、Googleドライブバックアップ・復元、全データ削除</p>
+    </div>
+
+    <p>Pro版（買い切り）でご利用いただける機能：</p>
+    <div class="pro-feature-grid">
+      <div class="pro-item"><span class="icon">📄</span><strong>PDF出力</strong><br>医師への提示・印刷・共有</div>
+      <div class="pro-item"><span class="icon">📊</span><strong>CSVエクスポート</strong><br>Excel・スプレッドシート対応</div>
+      <div class="pro-item"><span class="icon">🎨</span><strong>テーマカラー変更</strong><br>アプリの外観をカスタマイズ</div>
+      <div class="pro-item"><span class="icon">📱</span><strong>ホーム画面ウィジェット</strong><br>最新血圧をホーム画面に表示</div>
+    </div>
+
+    <div class="important-box">
+      <p>Pro版は一度ご購入いただくと、同じ Google アカウントでの再インストール・機種変更後も「購入の復元」機能でご利用いただけます。サブスクリプション型ではなく買い切り型です。</p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2><span class="num">4</span>禁止事項</h2>
+    <p>以下の行為を禁止します。</p>
+    <ul>
+      <li>本アプリのリバースエンジニアリング・逆コンパイル・改変</li>
+      <li>本アプリを用いた違法行為または公序良俗に反する行為</li>
+      <li>他者への本アプリの不正再配布</li>
+      <li>本アプリに虚偽の情報を入力して第三者を欺く行為</li>
+      <li>当開発者または第三者の権利・利益を侵害する行為</li>
+    </ul>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <h2><span class="num">5</span>データの取り扱いと自己責任</h2>
+    <p>入力されたすべての記録データはお使いの端末内にのみ保存されます。端末の紛失・故障・アプリの削除等によるデータ消失について、当開発者は責任を負いません。</p>
+    <p>Googleドライブへのバックアップ機能をご利用いただくことでデータを保護できます。バックアップの実施はユーザーの責任において行ってください。</p>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2><span class="num">6</span>免責事項</h2>
+    <div class="warning-box">
+      <span class="icon">⚠️</span>
+      <p>本アプリの利用またはご利用いただけないことによって生じた損害（健康上の損害を含む）について、当開発者は法令上許容される範囲において一切の責任を負いません。本アプリは現状有姿にて提供されます。</p>
+    </div>
+    <ul>
+      <li>本アプリの動作保証・継続提供の保証はいたしません</li>
+      <li>アプリの不具合・通知未配信等による損害への賠償責任は負いません</li>
+      <li>Firebase 等の外部サービスの障害に起因する問題について責任を負いません</li>
+      <li>Googleドライブへのバックアップ・復元に関するデータ損失について責任を負いません</li>
+    </ul>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <h2><span class="num">7</span>知的財産権</h2>
+    <p>本アプリのソフトウェア・デザイン・文章・商標等に関する知的財産権はすべて当開発者に帰属します。本規約に別途定める場合を除き、無断での複製・転用を禁じます。</p>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2><span class="num">8</span>サービスの変更・終了</h2>
+    <p>当開発者は、ユーザーへの事前告知を行ったうえで、本アプリの機能変更・バージョンアップ・サービス終了を行う場合があります。ただし、緊急の場合は事前告知なしに変更を行うことがあります。</p>
+    <p>Pro版を購入済みの場合も、サービス終了時には機能をご利用いただけなくなる場合がございます。</p>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <h2><span class="num">9</span>規約の変更</h2>
+    <p>本規約は必要に応じて変更されることがあります。重要な変更については、アプリのアップデート時またはこのページにてお知らせします。変更後に本アプリを継続してご利用いただいた場合、変更後の規約に同意したものとみなします。</p>
+  </section>
+
+  <!-- 10 -->
+  <section>
+    <h2><span class="num">10</span>準拠法・管轄</h2>
+    <p>本規約は日本法に準拠します。本アプリに関する紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+  </section>
+
+  <!-- 11 -->
+  <section>
+    <h2><span class="num">11</span>お問い合わせ</h2>
+    <div class="contact-box">
+      <p>本規約に関するご質問は下記までお問い合わせください。</p>
+      <br>
+      <p>開発者：BunDev</p>
+      <p>メールアドレス：<a href="mailto:support.bun.apps@gmail.com">support.bun.apps@gmail.com</a></p>
+    </div>
+  </section>
+
+  <div class="update-note">
+    制定日：2025年6月1日 &nbsp;|&nbsp; 最終更新：2025年6月1日<br>
+    &copy; BunDev. All rights reserved.
+  </div>
+
+</div>
+</body>
+</html>
