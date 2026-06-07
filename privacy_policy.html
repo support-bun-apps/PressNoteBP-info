@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プライバシーポリシー - PressNote BP</title>
+  <title>プライバシーポリシー / Privacy Policy - PressNote BP</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap');
 
     :root {
       --red:    #C0392B;
       --dark:   #1a1a2e;
-      --mid:    #2d2d44;
       --light:  #f7f5f2;
-      --accent: #e8e0d5;
       --text:   #2c2c2c;
       --muted:  #666;
       --border: #ddd8d0;
+      --en-bg:  #f0f4ff;
+      --en-border: #b0bde8;
+      --en-text: #1a2050;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -62,15 +63,22 @@
       padding: 4px 14px;
       border-radius: 20px;
       margin-bottom: 16px;
-      font-family: 'Noto Sans JP', sans-serif;
       font-weight: 500;
     }
     header h1 {
       font-family: 'Noto Serif JP', serif;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 600;
       letter-spacing: 0.04em;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
+    }
+    header h1 span.en {
+      display: block;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      margin-top: 4px;
+      font-family: 'Noto Sans JP', sans-serif;
     }
     header p {
       font-size: 13px;
@@ -89,15 +97,23 @@
       border-left: 4px solid var(--red);
       border-radius: 0 8px 8px 0;
       padding: 20px 24px;
-      margin-bottom: 40px;
+      margin-bottom: 8px;
       font-size: 14px;
       color: #444;
       line-height: 1.9;
     }
-
-    section {
+    .intro-box-en {
+      background: var(--en-bg);
+      border-left: 4px solid var(--en-border);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
       margin-bottom: 40px;
+      font-size: 13px;
+      color: var(--en-text);
+      line-height: 1.9;
     }
+
+    section { margin-bottom: 40px; }
 
     h2 {
       font-family: 'Noto Serif JP', serif;
@@ -126,39 +142,67 @@
     }
 
     p { margin-bottom: 12px; color: #333; }
+    p.en-p {
+      font-size: 13px;
+      color: var(--en-text);
+      background: var(--en-bg);
+      border-left: 3px solid var(--en-border);
+      padding: 8px 14px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 14px;
+    }
 
     .card {
       background: #fff;
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 20px 24px;
+      padding: 16px 20px;
+      margin-bottom: 8px;
+    }
+    .card-en {
+      background: var(--en-bg);
+      border: 1px solid var(--en-border);
+      border-radius: 10px;
+      padding: 14px 20px;
       margin-bottom: 16px;
     }
     .card-title {
       font-weight: 500;
       color: var(--dark);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-size: 14px;
     }
-    .card p { margin: 0; font-size: 14px; color: #555; }
+    .card p, .card-en p { margin: 0; font-size: 14px; color: #555; }
+    .card-en p { color: var(--en-text); }
+    .card-en .card-title { color: #2a3880; }
 
     .highlight-box {
       background: #fff8f7;
       border: 1px solid #f5c6c2;
       border-radius: 10px;
       padding: 18px 22px;
+      margin-bottom: 8px;
+    }
+    .highlight-box-en {
+      background: var(--en-bg);
+      border: 1px solid var(--en-border);
+      border-radius: 10px;
+      padding: 14px 22px;
       margin-bottom: 16px;
     }
     .highlight-box .icon { font-size: 20px; margin-bottom: 6px; display: block; }
-    .highlight-box p { font-size: 14px; color: #555; margin: 0; }
+    .highlight-box p, .highlight-box-en p { font-size: 14px; margin: 0; }
+    .highlight-box p { color: #555; }
+    .highlight-box-en p { color: var(--en-text); }
     .highlight-box strong { color: var(--red); }
 
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 14px;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
+    table.en-table { margin-bottom: 16px; }
     th {
       background: var(--dark);
       color: #fff;
@@ -166,6 +210,7 @@
       text-align: left;
       font-weight: 500;
     }
+    table.en-table th { background: #2a3880; }
     td {
       padding: 10px 14px;
       border-bottom: 1px solid var(--border);
@@ -173,12 +218,14 @@
     }
     tr:last-child td { border-bottom: none; }
     tr:nth-child(even) td { background: #fafaf8; }
+    table.en-table tr:nth-child(even) td { background: #edf1ff; }
 
     ul {
       padding-left: 0;
       list-style: none;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
+    ul.en-ul { margin-bottom: 16px; }
     ul li {
       padding: 6px 0 6px 22px;
       position: relative;
@@ -186,12 +233,20 @@
       color: #444;
       border-bottom: 1px dashed #eee;
     }
+    ul.en-ul li {
+      color: var(--en-text);
+      background: var(--en-bg);
+      border-bottom: 1px dashed #b0bde8;
+      font-size: 13px;
+    }
     ul li:last-child { border-bottom: none; }
-    ul li::before {
-      content: '▸';
-      color: var(--red);
-      position: absolute;
-      left: 0;
+    ul li::before { content: '▸'; color: var(--red); position: absolute; left: 0; }
+    ul.en-ul li::before { color: #2a3880; }
+
+    .lang-divider {
+      border: none;
+      border-top: 1px dashed #c0c8d8;
+      margin: 6px 0 10px;
     }
 
     .contact-box {
@@ -201,11 +256,7 @@
       padding: 24px 28px;
       margin-top: 16px;
     }
-    .contact-box a {
-      color: #f4a89a;
-      text-decoration: none;
-      font-weight: 500;
-    }
+    .contact-box a { color: #f4a89a; text-decoration: none; font-weight: 500; }
     .contact-box a:hover { text-decoration: underline; }
     .contact-box p { color: rgba(255,255,255,0.8); margin: 0; font-size: 14px; }
 
@@ -219,7 +270,7 @@
     }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 22px; }
+      header h1 { font-size: 20px; }
       .container { padding: 32px 16px 60px; }
       h2 { font-size: 16px; }
       th, td { padding: 8px 10px; }
@@ -231,8 +282,8 @@
 <header>
   <div class="header-inner">
     <span class="app-badge">PressNote BP</span>
-    <h1>プライバシーポリシー</h1>
-    <p>Privacy Policy &nbsp;|&nbsp; 最終更新日: 2025年6月1日</p>
+    <h1>プライバシーポリシー<span class="en">Privacy Policy</span></h1>
+    <p>最終更新日 / Last Updated: 2025年6月1日 (June 1, 2025)</p>
   </div>
 </header>
 
@@ -241,45 +292,67 @@
   <div class="intro-box">
     BunDev（以下「当開発者」）は、Android アプリ「PressNote BP」（以下「本アプリ」）をご利用いただくにあたり、ユーザーの個人情報・プライバシーの保護を最重要事項と考えています。本ポリシーでは、情報の取り扱い方針を明確にご説明します。
   </div>
+  <div class="intro-box-en">
+    BunDev ("the Developer") considers the protection of users' personal information and privacy to be of the utmost importance when using the Android app "PressNote BP" ("the App"). This policy clearly explains our approach to handling information.
+  </div>
 
   <!-- 1 -->
   <section>
-    <h2><span class="num">1</span>収集する情報</h2>
+    <h2><span class="num">1</span>収集する情報 / Information We Collect</h2>
     <p>本アプリが取り扱う情報は以下のとおりです。</p>
+    <p class="en-p">The App handles the following types of information.</p>
 
     <div class="card">
       <div class="card-title">① ユーザーが入力するデータ（健康情報）</div>
       <p>血圧値（収縮期・拡張期）、脈拍数、計測時刻区分（朝・昼・夜）、メモ。これらは<strong>お使いの端末内にのみ保存</strong>され、当開発者のサーバーへは送信されません。</p>
+    </div>
+    <div class="card-en">
+      <div class="card-title">① User-entered data (health information)</div>
+      <p>Blood pressure values (systolic/diastolic), pulse rate, time-of-day (morning/noon/evening), and notes. This data is stored <strong>only on your device</strong> and is never sent to the Developer's servers.</p>
     </div>
 
     <div class="card">
       <div class="card-title">② クラッシュレポート（Firebase Crashlytics）</div>
       <p>アプリが異常終了した場合、端末の機種名・OSバージョン・エラーのスタックトレース等が Google Firebase を通じて収集されます。氏名・メールアドレス等の個人を特定できる情報は含まれません。</p>
     </div>
+    <div class="card-en">
+      <div class="card-title">② Crash reports (Firebase Crashlytics)</div>
+      <p>If the App crashes, device model, OS version, and error stack traces are collected via Google Firebase. No personally identifiable information (name, email, etc.) is included.</p>
+    </div>
 
     <div class="card">
       <div class="card-title">③ 利用状況の分析（Firebase Analytics）</div>
       <p>画面の遷移回数など匿名の利用統計が Google Firebase を通じて収集されます。個人を特定できる情報は含まれません。</p>
+    </div>
+    <div class="card-en">
+      <div class="card-title">③ Usage analytics (Firebase Analytics)</div>
+      <p>Anonymous usage statistics such as screen navigation counts are collected via Google Firebase. No personally identifiable information is included.</p>
     </div>
 
     <div class="card">
       <div class="card-title">④ 購入情報（Google Play Billing）</div>
       <p>Pro版購入の確認に Google Play Billing を利用します。決済情報は Google が処理し、当開発者はカード番号等を取得・保存しません。</p>
     </div>
+    <div class="card-en">
+      <div class="card-title">④ Purchase information (Google Play Billing)</div>
+      <p>Google Play Billing is used to verify Pro version purchases. Payment processing is handled by Google; the Developer does not obtain or store card numbers or payment details.</p>
+    </div>
 
     <div class="card">
       <div class="card-title">⑤ Googleドライブへのバックアップ（ユーザーの任意操作）</div>
       <p>設定画面でバックアップ機能を有効にした場合、ユーザーが明示的に操作したタイミングでのみ、記録データがユーザー自身の Google ドライブに保存されます。当開発者はこのデータにアクセスしません。</p>
     </div>
+    <div class="card-en">
+      <div class="card-title">⑤ Google Drive backup (user-initiated)</div>
+      <p>When the backup feature is enabled in Settings, record data is saved to the user's own Google Drive only when the user explicitly initiates a backup. The Developer does not access this data.</p>
+    </div>
   </section>
 
   <!-- 2 -->
   <section>
-    <h2><span class="num">2</span>情報の利用目的</h2>
+    <h2><span class="num">2</span>情報の利用目的 / Purpose of Use</h2>
     <table>
-      <thead>
-        <tr><th>情報の種類</th><th>利用目的</th></tr>
-      </thead>
+      <thead><tr><th>情報の種類</th><th>利用目的</th></tr></thead>
       <tbody>
         <tr><td>健康記録データ</td><td>アプリ内のグラフ・カレンダー表示、PDF/CSV出力機能の提供</td></tr>
         <tr><td>クラッシュレポート</td><td>バグの特定・修正、アプリの品質改善</td></tr>
@@ -288,11 +361,22 @@
         <tr><td>Googleドライブデータ</td><td>機種変更時のデータ復元（ユーザー操作時のみ）</td></tr>
       </tbody>
     </table>
+    <hr class="lang-divider">
+    <table class="en-table">
+      <thead><tr><th>Data Type</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Health records</td><td>Displaying graphs, calendar, and providing PDF/CSV export features</td></tr>
+        <tr><td>Crash reports</td><td>Identifying and fixing bugs; improving app quality</td></tr>
+        <tr><td>Usage statistics</td><td>Feature improvements and user experience enhancements</td></tr>
+        <tr><td>Purchase information</td><td>Unlocking Pro version features</td></tr>
+        <tr><td>Google Drive data</td><td>Restoring data after device change (user-initiated only)</td></tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- 3 -->
   <section>
-    <h2><span class="num">3</span>第三者への情報提供</h2>
+    <h2><span class="num">3</span>第三者への情報提供 / Sharing with Third Parties</h2>
     <p>当開発者は、以下の場合を除きユーザーの情報を第三者に提供しません。</p>
     <ul>
       <li>法令に基づき開示が必要な場合</li>
@@ -300,60 +384,88 @@
       <li>Google Play Billing を通じた決済処理（Google LLC が担当）</li>
     </ul>
     <p>上記サービスのプライバシーポリシーは <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a> をご参照ください。</p>
+    <hr class="lang-divider">
+    <p class="en-p">The Developer does not share user information with third parties except in the following cases.</p>
+    <ul class="en-ul">
+      <li>When disclosure is required by law</li>
+      <li>Sending anonymized crash and usage data to Firebase (Google LLC)</li>
+      <li>Payment processing via Google Play Billing (handled by Google LLC)</li>
+    </ul>
+    <p class="en-p">Please refer to the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> for the privacy policies of the above services.</p>
   </section>
 
   <!-- 4 -->
   <section>
-    <h2><span class="num">4</span>端末内データの取り扱い</h2>
+    <h2><span class="num">4</span>端末内データの取り扱い / On-Device Data Handling</h2>
     <div class="highlight-box">
       <span class="icon">🔒</span>
       <p>入力された血圧・脈拍データは<strong>すべてお使いの端末内（Room データベース）にのみ保存</strong>されます。当開発者のサーバーへの送信は一切行いません。アプリをアンインストールするとデータは削除されます。バックアップには Googleドライブ機能をご利用ください。</p>
+    </div>
+    <div class="highlight-box-en">
+      <p>All entered blood pressure and pulse data is stored <strong>only on your device (Room database)</strong>. No data is ever sent to the Developer's servers. Uninstalling the App will delete all data. Please use the Google Drive backup feature to protect your records.</p>
     </div>
   </section>
 
   <!-- 5 -->
   <section>
-    <h2><span class="num">5</span>通知・権限の取り扱い</h2>
+    <h2><span class="num">5</span>通知・権限の取り扱い / Permissions</h2>
     <table>
-      <thead>
-        <tr><th>権限</th><th>用途</th></tr>
-      </thead>
+      <thead><tr><th>権限</th><th>用途</th></tr></thead>
       <tbody>
         <tr><td>通知（POST_NOTIFICATIONS）</td><td>朝・夕方の血圧測定リマインダー通知</td></tr>
         <tr><td>正確なアラーム（SCHEDULE_EXACT_ALARM）</td><td>指定時刻どおりに通知を届けるため</td></tr>
         <tr><td>起動完了受信（RECEIVE_BOOT_COMPLETED）</td><td>端末再起動後に通知スケジュールを復元するため</td></tr>
         <tr><td>インターネット（INTERNET）</td><td>Firebase・Google Play Billing・Googleドライブとの通信</td></tr>
         <tr><td>バイブレーション（VIBRATE）</td><td>通知のバイブレーション</td></tr>
+        <tr><td>フォアグラウンドサービス（FOREGROUND_SERVICE）</td><td>通知配信の信頼性確保のため</td></tr>
       </tbody>
     </table>
     <p>各権限はアプリの機能提供のみに使用し、不要な情報収集には使用しません。</p>
+    <hr class="lang-divider">
+    <table class="en-table">
+      <thead><tr><th>Permission</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Notifications (POST_NOTIFICATIONS)</td><td>Morning and evening blood pressure reminder notifications</td></tr>
+        <tr><td>Exact alarms (SCHEDULE_EXACT_ALARM)</td><td>Delivering notifications at the exact scheduled time</td></tr>
+        <tr><td>Boot completed (RECEIVE_BOOT_COMPLETED)</td><td>Restoring the notification schedule after device restart</td></tr>
+        <tr><td>Internet (INTERNET)</td><td>Communication with Firebase, Google Play Billing, and Google Drive</td></tr>
+        <tr><td>Vibration (VIBRATE)</td><td>Vibration for notifications</td></tr>
+        <tr><td>Foreground service (FOREGROUND_SERVICE)</td><td>Ensuring reliable notification delivery</td></tr>
+      </tbody>
+    </table>
+    <p class="en-p">Each permission is used solely to provide app features and is not used for unnecessary data collection.</p>
   </section>
 
   <!-- 6 -->
   <section>
-    <h2><span class="num">6</span>子どものプライバシー</h2>
+    <h2><span class="num">6</span>子どものプライバシー / Children's Privacy</h2>
     <p>本アプリは13歳未満の方を対象としていません。13歳未満の方からの個人情報収集は意図しておらず、万が一収集が判明した場合は速やかに削除します。</p>
+    <hr class="lang-divider">
+    <p class="en-p">This App is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we discover that such information has been collected, we will delete it promptly.</p>
   </section>
 
   <!-- 7 -->
   <section>
-    <h2><span class="num">7</span>プライバシーポリシーの変更</h2>
+    <h2><span class="num">7</span>プライバシーポリシーの変更 / Changes to This Policy</h2>
     <p>本ポリシーは必要に応じて改定される場合があります。重要な変更がある場合は、アプリ内またはこのページにてお知らせします。定期的にご確認いただくことをお勧めします。</p>
+    <hr class="lang-divider">
+    <p class="en-p">This policy may be revised as necessary. We will notify users of any significant changes within the App or on this page. We recommend reviewing this page periodically.</p>
   </section>
 
   <!-- 8 -->
   <section>
-    <h2><span class="num">8</span>お問い合わせ</h2>
+    <h2><span class="num">8</span>お問い合わせ / Contact</h2>
     <div class="contact-box">
       <p>プライバシーに関するご質問・ご要望は下記までご連絡ください。</p>
+      <p style="color:rgba(255,255,255,0.55);font-size:12px;margin-top:4px;">For any questions or requests regarding privacy, please contact us below.</p>
       <br>
-      <p>開発者：BunDev</p>
-      <p>メールアドレス：<a href="mailto:support.bun.apps@gmail.com">support.bun.apps@gmail.com</a></p>
+      <p>開発者 / Developer：BunDev</p>
+      <p>メール / Email：<a href="mailto:support.bun.apps@gmail.com">support.bun.apps@gmail.com</a></p>
     </div>
   </section>
 
   <div class="update-note">
-    制定日：2025年6月1日 &nbsp;|&nbsp; 最終更新：2025年6月1日<br>
+    制定日 / Established: 2025年6月1日 &nbsp;|&nbsp; 最終更新 / Last Updated: 2025年6月1日<br>
     &copy; BunDev. All rights reserved.
   </div>
 
