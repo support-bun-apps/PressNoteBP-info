@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>利用規約 - PressNote BP</title>
+  <title>利用規約 / Terms of Service - PressNote BP</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap');
 
     :root {
       --blue:   #1a5276;
       --dark:   #0f2233;
-      --mid:    #1e3a54;
       --light:  #f4f7fa;
-      --accent: #dce9f5;
       --text:   #1c2b3a;
       --muted:  #667;
       --border: #ccd8e5;
+      --en-bg:  #f0f4ff;
+      --en-border: #b0bde8;
+      --en-text: #1a2050;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -66,31 +67,41 @@
     }
     header h1 {
       font-family: 'Noto Serif JP', serif;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 600;
       letter-spacing: 0.04em;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
-    header p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.05em;
+    header h1 span.en {
+      display: block;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      margin-top: 4px;
+      font-family: 'Noto Sans JP', sans-serif;
     }
+    header p { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; }
 
-    .container {
-      max-width: 740px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
+    .container { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
 
     .intro-box {
       background: #fff;
       border-left: 4px solid var(--blue);
       border-radius: 0 8px 8px 0;
       padding: 20px 24px;
-      margin-bottom: 40px;
+      margin-bottom: 8px;
       font-size: 14px;
       color: #444;
+      line-height: 1.9;
+    }
+    .intro-box-en {
+      background: var(--en-bg);
+      border-left: 4px solid var(--en-border);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 24px;
+      margin-bottom: 40px;
+      font-size: 13px;
+      color: var(--en-text);
       line-height: 1.9;
     }
 
@@ -117,37 +128,57 @@
       color: #fff;
       border-radius: 50%;
       font-size: 13px;
-      font-family: 'Noto Sans JP', sans-serif;
       font-weight: 500;
       flex-shrink: 0;
     }
 
     p { margin-bottom: 12px; color: #333; }
+    p.en-p {
+      font-size: 13px;
+      color: var(--en-text);
+      background: var(--en-bg);
+      border-left: 3px solid var(--en-border);
+      padding: 8px 14px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 14px;
+    }
 
     .card {
       background: #fff;
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 20px 24px;
+      margin-bottom: 8px;
+    }
+    .card-en {
+      background: var(--en-bg);
+      border: 1px solid var(--en-border);
+      border-radius: 10px;
+      padding: 14px 20px;
       margin-bottom: 16px;
     }
-    .card-title {
-      font-weight: 500;
-      color: var(--dark);
-      margin-bottom: 8px;
-      font-size: 14px;
-    }
+    .card-title { font-weight: 500; color: var(--dark); margin-bottom: 8px; font-size: 14px; }
     .card p { margin: 0; font-size: 14px; color: #555; }
+    .card-en p { margin: 0; font-size: 14px; color: var(--en-text); }
+    .card-en .card-title { color: #2a3880; }
 
     .warning-box {
       background: #fff9ed;
       border: 1px solid #f5dfa0;
       border-radius: 10px;
       padding: 18px 22px;
+      margin-bottom: 8px;
+    }
+    .warning-box-en {
+      background: var(--en-bg);
+      border: 1px solid var(--en-border);
+      border-radius: 10px;
+      padding: 14px 22px;
       margin-bottom: 16px;
     }
     .warning-box .icon { font-size: 20px; margin-bottom: 6px; display: block; }
     .warning-box p { font-size: 14px; color: #555; margin: 0; }
+    .warning-box-en p { font-size: 13px; color: var(--en-text); margin: 0; }
     .warning-box strong { color: #a04000; }
 
     .important-box {
@@ -155,15 +186,24 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 18px 22px;
+      margin-bottom: 8px;
+    }
+    .important-box-en {
+      background: var(--en-bg);
+      border: 1px solid var(--en-border);
+      border-radius: 10px;
+      padding: 14px 22px;
       margin-bottom: 16px;
     }
     .important-box p { font-size: 14px; color: #2c4a6e; margin: 0; line-height: 1.8; }
+    .important-box-en p { font-size: 13px; color: var(--en-text); margin: 0; line-height: 1.8; }
 
     ul {
       padding-left: 0;
       list-style: none;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
+    ul.en-ul { margin-bottom: 16px; }
     ul li {
       padding: 7px 0 7px 22px;
       position: relative;
@@ -171,15 +211,23 @@
       color: #444;
       border-bottom: 1px dashed #e0e8f0;
     }
-    ul li:last-child { border-bottom: none; }
-    ul li::before {
-      content: '▸';
-      color: var(--blue);
-      position: absolute;
-      left: 0;
+    ul.en-ul li {
+      color: var(--en-text);
+      background: var(--en-bg);
+      border-bottom: 1px dashed #b0bde8;
+      font-size: 13px;
     }
+    ul li:last-child { border-bottom: none; }
+    ul li::before { content: '▸'; color: var(--blue); position: absolute; left: 0; }
+    ul.en-ul li::before { color: #2a3880; }
 
     .pro-feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .pro-feature-grid-en {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
@@ -193,10 +241,26 @@
       font-size: 13px;
       color: #334;
     }
-    .pro-item .icon { font-size: 20px; display: block; margin-bottom: 6px; }
+    .pro-item-en {
+      background: var(--en-bg);
+      border: 1px solid var(--en-border);
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 13px;
+      color: var(--en-text);
+    }
+    .pro-item .icon, .pro-item-en .icon { font-size: 20px; display: block; margin-bottom: 6px; }
     .pro-item strong { color: var(--dark); }
+    .pro-item-en strong { color: #2a3880; }
+
     @media (max-width: 480px) {
-      .pro-feature-grid { grid-template-columns: 1fr; }
+      .pro-feature-grid, .pro-feature-grid-en { grid-template-columns: 1fr; }
+    }
+
+    .lang-divider {
+      border: none;
+      border-top: 1px dashed #b0bde8;
+      margin: 6px 0 10px;
     }
 
     .contact-box {
@@ -206,11 +270,7 @@
       padding: 24px 28px;
       margin-top: 16px;
     }
-    .contact-box a {
-      color: #7db8e8;
-      text-decoration: none;
-      font-weight: 500;
-    }
+    .contact-box a { color: #7db8e8; text-decoration: none; font-weight: 500; }
     .contact-box a:hover { text-decoration: underline; }
     .contact-box p { color: rgba(255,255,255,0.8); margin: 0; font-size: 14px; }
 
@@ -226,7 +286,7 @@
     a { color: var(--blue); }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 22px; }
+      header h1 { font-size: 20px; }
       .container { padding: 32px 16px 60px; }
       h2 { font-size: 16px; }
     }
@@ -237,8 +297,8 @@
 <header>
   <div class="header-inner">
     <span class="app-badge">PressNote BP</span>
-    <h1>利用規約</h1>
-    <p>Terms of Service &nbsp;|&nbsp; 最終更新日: 2025年6月1日</p>
+    <h1>利用規約<span class="en">Terms of Service</span></h1>
+    <p>最終更新日 / Last Updated: 2025年6月1日 (June 1, 2025)</p>
   </div>
 </header>
 
@@ -247,53 +307,81 @@
   <div class="intro-box">
     本利用規約（以下「本規約」）は、BunDev（以下「当開発者」）が提供する Android アプリ「PressNote BP」（以下「本アプリ」）のご利用に関する条件を定めるものです。本アプリをインストールまたはご利用いただいた時点で、本規約に同意したものとみなします。
   </div>
+  <div class="intro-box-en">
+    These Terms of Service ("Terms") govern your use of the Android app "PressNote BP" ("the App") provided by BunDev ("the Developer"). By installing or using the App, you are deemed to have agreed to these Terms.
+  </div>
 
   <!-- 1 -->
   <section>
-    <h2><span class="num">1</span>本アプリの目的と免責</h2>
+    <h2><span class="num">1</span>本アプリの目的と免責 / Purpose and Disclaimer</h2>
     <div class="warning-box">
       <span class="icon">⚕️</span>
       <p>本アプリは、日常の血圧・脈拍の記録を補助することを目的とした<strong>健康管理支援ツール</strong>です。<strong>医療行為・医学的診断・治療の代替となるものではありません。</strong>体調に異変を感じた場合や、血圧値について不安がある場合は、必ず医療機関を受診してください。</p>
     </div>
+    <div class="warning-box-en">
+      <p>This App is a <strong>personal health management support tool</strong> designed to assist with recording daily blood pressure and pulse readings. <strong>It is not a substitute for medical advice, diagnosis, or treatment.</strong> If you feel unwell or have concerns about your blood pressure readings, please consult a healthcare professional.</p>
+    </div>
     <p>本アプリの記録データや表示内容は、医師・医療機関の診断の参考資料としてお使いいただけますが、最終的な医療判断は必ず専門家にお任せください。</p>
+    <p class="en-p">The records and data displayed in this App may be used as reference material for consultations with healthcare professionals, but all medical decisions should be made by qualified specialists.</p>
   </section>
 
   <!-- 2 -->
   <section>
-    <h2><span class="num">2</span>利用資格</h2>
+    <h2><span class="num">2</span>利用資格 / Eligibility</h2>
     <ul>
       <li>本アプリは13歳以上の方を対象としています</li>
       <li>Google Play の利用規約に同意している方がご利用いただけます</li>
       <li>日本国内法令を遵守してご利用ください</li>
     </ul>
+    <ul class="en-ul">
+      <li>The App is intended for users aged 13 and over</li>
+      <li>Users must have agreed to Google Play's Terms of Service</li>
+      <li>Please use the App in compliance with applicable laws and regulations</li>
+    </ul>
   </section>
 
   <!-- 3 -->
   <section>
-    <h2><span class="num">3</span>無料機能と Pro 版機能</h2>
+    <h2><span class="num">3</span>無料機能と Pro 版機能 / Free and Pro Features</h2>
     <p>本アプリは無料でご利用いただける機能と、買い切り型の「Pro版」でご利用いただける機能で構成されています。</p>
+    <p class="en-p">The App offers features available for free and features accessible via a one-time purchase "Pro version."</p>
 
     <div class="card">
       <div class="card-title">無料機能</div>
       <p>血圧・脈拍の記録（朝・昼・夜）、グラフ表示（7日・30日・90日）、カレンダー表示、メモ記録、通知リマインダー（朝・夕方）、Googleドライブバックアップ・復元、全データ削除</p>
     </div>
+    <div class="card-en">
+      <div class="card-title">Free features</div>
+      <p>Blood pressure / pulse recording (morning, noon, evening), graph display (7/30/90 days), calendar view, note recording, reminder notifications (morning and evening), Google Drive backup and restore, delete all data</p>
+    </div>
 
     <p>Pro版（買い切り）でご利用いただける機能：</p>
+    <p class="en-p">Features available with the Pro version (one-time purchase):</p>
+
     <div class="pro-feature-grid">
       <div class="pro-item"><span class="icon">📄</span><strong>PDF出力</strong><br>医師への提示・印刷・共有</div>
       <div class="pro-item"><span class="icon">📊</span><strong>CSVエクスポート</strong><br>Excel・スプレッドシート対応</div>
       <div class="pro-item"><span class="icon">🎨</span><strong>テーマカラー変更</strong><br>アプリの外観をカスタマイズ</div>
       <div class="pro-item"><span class="icon">📱</span><strong>ホーム画面ウィジェット</strong><br>最新血圧をホーム画面に表示</div>
     </div>
+    <div class="pro-feature-grid-en">
+      <div class="pro-item-en"><span class="icon">📄</span><strong>PDF export</strong><br>Show to doctor, print &amp; share</div>
+      <div class="pro-item-en"><span class="icon">📊</span><strong>CSV export</strong><br>Open with Excel or Google Sheets</div>
+      <div class="pro-item-en"><span class="icon">🎨</span><strong>Theme color</strong><br>Customize the app's appearance</div>
+      <div class="pro-item-en"><span class="icon">📱</span><strong>Home screen widget</strong><br>See latest BP on home screen</div>
+    </div>
 
     <div class="important-box">
       <p>Pro版は一度ご購入いただくと、同じ Google アカウントでの再インストール・機種変更後も「購入の復元」機能でご利用いただけます。サブスクリプション型ではなく買い切り型です。</p>
+    </div>
+    <div class="important-box-en">
+      <p>Once purchased, the Pro version can be accessed again after reinstalling the App or changing devices using the "Restore purchase" feature with the same Google account. This is a one-time purchase, not a subscription.</p>
     </div>
   </section>
 
   <!-- 4 -->
   <section>
-    <h2><span class="num">4</span>禁止事項</h2>
+    <h2><span class="num">4</span>禁止事項 / Prohibited Activities</h2>
     <p>以下の行為を禁止します。</p>
     <ul>
       <li>本アプリのリバースエンジニアリング・逆コンパイル・改変</li>
@@ -302,21 +390,34 @@
       <li>本アプリに虚偽の情報を入力して第三者を欺く行為</li>
       <li>当開発者または第三者の権利・利益を侵害する行為</li>
     </ul>
+    <ul class="en-ul">
+      <li>Reverse engineering, decompiling, or modifying the App</li>
+      <li>Using the App for illegal activities or activities contrary to public order and morality</li>
+      <li>Unauthorized redistribution of the App to others</li>
+      <li>Entering false information into the App to deceive third parties</li>
+      <li>Infringing upon the rights or interests of the Developer or third parties</li>
+    </ul>
   </section>
 
   <!-- 5 -->
   <section>
-    <h2><span class="num">5</span>データの取り扱いと自己責任</h2>
+    <h2><span class="num">5</span>データの取り扱いと自己責任 / Data Handling and User Responsibility</h2>
     <p>入力されたすべての記録データはお使いの端末内にのみ保存されます。端末の紛失・故障・アプリの削除等によるデータ消失について、当開発者は責任を負いません。</p>
     <p>Googleドライブへのバックアップ機能をご利用いただくことでデータを保護できます。バックアップの実施はユーザーの責任において行ってください。</p>
+    <hr class="lang-divider">
+    <p class="en-p">All record data you enter is stored only on your device. The Developer is not responsible for data loss due to device loss, malfunction, or App deletion.</p>
+    <p class="en-p">You can protect your data using the Google Drive backup feature. Performing backups is the user's own responsibility.</p>
   </section>
 
   <!-- 6 -->
   <section>
-    <h2><span class="num">6</span>免責事項</h2>
+    <h2><span class="num">6</span>免責事項 / Disclaimer of Liability</h2>
     <div class="warning-box">
       <span class="icon">⚠️</span>
       <p>本アプリの利用またはご利用いただけないことによって生じた損害（健康上の損害を含む）について、当開発者は法令上許容される範囲において一切の責任を負いません。本アプリは現状有姿にて提供されます。</p>
+    </div>
+    <div class="warning-box-en">
+      <p>To the extent permitted by law, the Developer assumes no liability for any damages (including health-related damages) arising from the use of or inability to use the App. The App is provided "as is."</p>
     </div>
     <ul>
       <li>本アプリの動作保証・継続提供の保証はいたしません</li>
@@ -324,46 +425,62 @@
       <li>Firebase 等の外部サービスの障害に起因する問題について責任を負いません</li>
       <li>Googleドライブへのバックアップ・復元に関するデータ損失について責任を負いません</li>
     </ul>
+    <ul class="en-ul">
+      <li>We do not guarantee the App's operation or continued availability</li>
+      <li>We are not liable for damages caused by App malfunctions or missed notifications</li>
+      <li>We are not responsible for issues caused by outages of external services such as Firebase</li>
+      <li>We are not responsible for data loss related to Google Drive backup or restore operations</li>
+    </ul>
   </section>
 
   <!-- 7 -->
   <section>
-    <h2><span class="num">7</span>知的財産権</h2>
+    <h2><span class="num">7</span>知的財産権 / Intellectual Property</h2>
     <p>本アプリのソフトウェア・デザイン・文章・商標等に関する知的財産権はすべて当開発者に帰属します。本規約に別途定める場合を除き、無断での複製・転用を禁じます。</p>
+    <hr class="lang-divider">
+    <p class="en-p">All intellectual property rights relating to the App's software, design, text, and trademarks belong to the Developer. Reproduction or use without permission is prohibited except as otherwise provided in these Terms.</p>
   </section>
 
   <!-- 8 -->
   <section>
-    <h2><span class="num">8</span>サービスの変更・終了</h2>
+    <h2><span class="num">8</span>サービスの変更・終了 / Changes and Termination</h2>
     <p>当開発者は、ユーザーへの事前告知を行ったうえで、本アプリの機能変更・バージョンアップ・サービス終了を行う場合があります。ただし、緊急の場合は事前告知なしに変更を行うことがあります。</p>
     <p>Pro版を購入済みの場合も、サービス終了時には機能をご利用いただけなくなる場合がございます。</p>
+    <hr class="lang-divider">
+    <p class="en-p">The Developer may modify features, release updates, or terminate the App after providing prior notice to users. However, changes may be made without prior notice in urgent situations.</p>
+    <p class="en-p">Even if you have purchased the Pro version, features may become unavailable upon service termination.</p>
   </section>
 
   <!-- 9 -->
   <section>
-    <h2><span class="num">9</span>規約の変更</h2>
+    <h2><span class="num">9</span>規約の変更 / Changes to Terms</h2>
     <p>本規約は必要に応じて変更されることがあります。重要な変更については、アプリのアップデート時またはこのページにてお知らせします。変更後に本アプリを継続してご利用いただいた場合、変更後の規約に同意したものとみなします。</p>
+    <hr class="lang-divider">
+    <p class="en-p">These Terms may be changed as necessary. We will notify users of significant changes at the time of App updates or on this page. Continued use of the App after changes constitutes acceptance of the revised Terms.</p>
   </section>
 
   <!-- 10 -->
   <section>
-    <h2><span class="num">10</span>準拠法・管轄</h2>
+    <h2><span class="num">10</span>準拠法・管轄 / Governing Law and Jurisdiction</h2>
     <p>本規約は日本法に準拠します。本アプリに関する紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+    <hr class="lang-divider">
+    <p class="en-p">These Terms are governed by the laws of Japan. Any disputes relating to the App shall be subject to the exclusive jurisdiction of the Tokyo District Court as the court of first instance.</p>
   </section>
 
   <!-- 11 -->
   <section>
-    <h2><span class="num">11</span>お問い合わせ</h2>
+    <h2><span class="num">11</span>お問い合わせ / Contact</h2>
     <div class="contact-box">
       <p>本規約に関するご質問は下記までお問い合わせください。</p>
+      <p style="color:rgba(255,255,255,0.55);font-size:12px;margin-top:4px;">For questions regarding these Terms, please contact us below.</p>
       <br>
-      <p>開発者：BunDev</p>
-      <p>メールアドレス：<a href="mailto:support.bun.apps@gmail.com">support.bun.apps@gmail.com</a></p>
+      <p>開発者 / Developer：BunDev</p>
+      <p>メール / Email：<a href="mailto:support.bun.apps@gmail.com">support.bun.apps@gmail.com</a></p>
     </div>
   </section>
 
   <div class="update-note">
-    制定日：2025年6月1日 &nbsp;|&nbsp; 最終更新：2025年6月1日<br>
+    制定日 / Established: 2025年6月1日 &nbsp;|&nbsp; 最終更新 / Last Updated: 2025年6月1日<br>
     &copy; BunDev. All rights reserved.
   </div>
 
