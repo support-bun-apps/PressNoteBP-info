@@ -1,403 +1,195 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>特定商取引法に基づく表記 / Specified Commercial Transactions - PressNote BP</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap');
-
-    :root {
-      --green:  #1a6b45;
-      --dark:   #0d2b1a;
-      --light:  #f3f9f5;
-      --accent: #d5ede2;
-      --text:   #1c2b22;
-      --muted:  #668;
-      --border: #c5ddd0;
-      --en-bg:  #f0f4ff;
-      --en-border: #b0bde8;
-      --en-text: #1a2050;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.85;
-      font-size: 15px;
-    }
-
-    header {
-      background: var(--dark);
-      color: #fff;
-      padding: 48px 24px 40px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      top: -50px; left: -40px;
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      background: rgba(26,107,69,0.3);
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; right: -30px;
-      width: 180px; height: 180px;
-      border-radius: 50%;
-      background: rgba(26,107,69,0.2);
-    }
-    .header-inner { position: relative; z-index: 1; }
-    .app-badge {
-      display: inline-block;
-      background: var(--green);
-      color: #fff;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      padding: 4px 14px;
-      border-radius: 20px;
-      margin-bottom: 16px;
-      font-weight: 500;
-    }
-    header h1 {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      margin-bottom: 6px;
-    }
-    header h1 span.en {
-      display: block;
-      font-size: 14px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.75);
-      margin-top: 4px;
-      font-family: 'Noto Sans JP', sans-serif;
-    }
-    header p { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; }
-
-    .container { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
-
-    .intro-box {
-      background: #fff;
-      border-left: 4px solid var(--green);
-      border-radius: 0 8px 8px 0;
-      padding: 18px 22px;
-      margin-bottom: 8px;
-      font-size: 13px;
-      color: #555;
-      line-height: 1.85;
-    }
-    .intro-box-en {
-      background: var(--en-bg);
-      border-left: 4px solid var(--en-border);
-      border-radius: 0 8px 8px 0;
-      padding: 14px 22px;
-      margin-bottom: 40px;
-      font-size: 13px;
-      color: var(--en-text);
-      line-height: 1.85;
-    }
-
-    .table-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 8px;
-    }
-    .table-card-en {
-      background: var(--en-bg);
-      border: 1px solid var(--en-border);
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 32px;
-    }
-    .table-card-title {
-      background: var(--dark);
-      color: #fff;
-      padding: 14px 24px;
-      font-family: 'Noto Serif JP', serif;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .table-card-en .table-card-title {
-      background: #2a3880;
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 14px;
-    }
-    .table-card-title .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      flex-shrink: 0;
-    }
-    .table-card-en .table-card-title .dot { background: #7db8e8; }
-
-    table { width: 100%; border-collapse: collapse; }
-    th {
-      width: 38%;
-      background: var(--accent);
-      color: var(--dark);
-      padding: 14px 20px;
-      text-align: left;
-      font-size: 13px;
-      font-weight: 500;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-    .table-card-en th {
-      background: #dce8ff;
-      color: #1a2050;
-      border-bottom: 1px solid var(--en-border);
-    }
-    td {
-      padding: 14px 20px;
-      border-bottom: 1px solid var(--border);
-      font-size: 14px;
-      color: #333;
-      vertical-align: top;
-    }
-    .table-card-en td {
-      border-bottom: 1px solid var(--en-border);
-      color: var(--en-text);
-      font-size: 13px;
-    }
-    tr:last-child th, tr:last-child td { border-bottom: none; }
-    tr:nth-child(even) th { background: #cce3d6; }
-    tr:nth-child(even) td { background: #fafcfb; }
-    .table-card-en tr:nth-child(even) th { background: #c8d8f8; }
-    .table-card-en tr:nth-child(even) td { background: #edf1ff; }
-
-    .note-box {
-      background: #fff9ed;
-      border: 1px solid #e8d5a0;
-      border-radius: 10px;
-      padding: 18px 22px;
-      margin-top: 8px;
-      font-size: 13px;
-      color: #555;
-      line-height: 1.85;
-    }
-    .note-box-en {
-      background: var(--en-bg);
-      border: 1px solid var(--en-border);
-      border-radius: 10px;
-      padding: 14px 22px;
-      margin-top: 8px;
-      margin-bottom: 16px;
-      font-size: 13px;
-      color: var(--en-text);
-      line-height: 1.85;
-    }
-    .note-box .note-title { font-weight: 500; color: #7a5000; margin-bottom: 8px; font-size: 14px; }
-    .note-box-en .note-title { font-weight: 500; color: #2a3880; margin-bottom: 8px; font-size: 13px; }
-
-    .contact-box {
-      background: var(--dark);
-      color: #fff;
-      border-radius: 12px;
-      padding: 24px 28px;
-      margin-top: 32px;
-    }
-    .contact-box a { color: #7dd4a8; text-decoration: none; font-weight: 500; }
-    .contact-box a:hover { text-decoration: underline; }
-    .contact-box p { color: rgba(255,255,255,0.8); margin: 0; font-size: 14px; line-height: 2; }
-
-    .update-note {
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-    }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 18px; }
-      .container { padding: 32px 16px 60px; }
-      th { width: 42%; padding: 12px 14px; }
-      td { padding: 12px 14px; }
-    }
-    @media (max-width: 480px) {
-      table, thead, tbody, th, td, tr { display: block; }
-      th { width: 100%; border-bottom: none; padding-bottom: 4px; background: var(--accent) !important; font-size: 12px; color: #1a6b45; }
-      .table-card-en th { background: #dce8ff !important; color: #2a3880; }
-      td { padding-top: 4px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Notice - PressNote BP</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .lang-switcher {
+            text-align: right;
+            margin-bottom: 24px;
+        }
+        .lang-switcher button {
+            background: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 6px 14px;
+            font-size: 13px;
+            cursor: pointer;
+            margin-left: 6px;
+            color: #555;
+        }
+        .lang-switcher button.active {
+            background: #333;
+            color: #fff;
+            border-color: #333;
+        }
+        h1 { font-size: 24px; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { font-size: 18px; margin-top: 30px; color: #000; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        th, td { text-align: left; padding: 15px; border-bottom: 1px solid #eee; vertical-align: top; }
+        th { width: 30%; background-color: #fafafa; font-weight: bold; font-size: 14px; color: #333; }
+        td { font-size: 14px; color: #555; line-height: 1.7; }
+        .note-box {
+            background-color: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 20px;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .footer { margin-top: 50px; font-size: 13px; color: #999; text-align: center; }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-
-<header>
-  <div class="header-inner">
-    <span class="app-badge">PressNote BP</span>
-    <h1>特定商取引法に基づく表記<span class="en">Specified Commercial Transactions Act</span></h1>
-    <p>最終更新日 / Last Updated: 2025年6月1日 (June 1, 2025)</p>
-  </div>
-</header>
-
 <div class="container">
+    <div class="lang-switcher">
+        <button id="btn-ja" class="active" onclick="setLang('ja')">日本語</button>
+        <button id="btn-en" onclick="setLang('en')">English</button>
+    </div>
 
-  <div class="intro-box">
-    特定商取引法（特商法）第11条および第12条の3の規定に基づき、以下の事項を表示します。本表記は Android アプリ「PressNote BP」における Pro版（有料コンテンツ）の販売に関するものです。
-  </div>
-  <div class="intro-box-en">
-    The following disclosures are made pursuant to Article 11 and Article 12-3 of the Act on Specified Commercial Transactions (Japan). These disclosures relate to the sale of the Pro version (paid content) of the Android app "PressNote BP."
-  </div>
+    <!-- 日本語 -->
+    <div id="content-ja">
+        <h1>特定商取引法に基づく表記</h1>
+        <div class="note-box">
+            特定商取引法（特商法）第11条および第12条の3の規定に基づき、以下の事項を表示します。本表記は Android アプリ「PressNote BP」における Pro版（有料コンテンツ）の販売に関するものです。
+        </div>
 
-  <!-- 販売者情報 -->
-  <div class="table-card">
-    <div class="table-card-title"><span class="dot"></span>販売者情報</div>
-    <table>
-      <tbody>
-        <tr><th>販売者名</th><td>BunDev</td></tr>
-        <tr><th>所在地</th><td>〒105-0013<br>東京都港区浜松町２丁目２番１５号<br>浜松町ダイヤビル２Ｆ</td></tr>
-        <tr><th>電話番号</th><td>メールにてお問い合わせください（開示請求には対応いたします）</td></tr>
-        <tr><th>メールアドレス</th><td><a href="mailto:support.bun.apps@gmail.com">support.bun.apps@gmail.com</a></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="table-card table-card-en">
-    <div class="table-card-title"><span class="dot"></span>Seller Information</div>
-    <table>
-      <tbody>
-        <tr><th>Seller Name</th><td>BunDev</td></tr>
-        <tr><th>Address</th><td>Hamamatsucho Diya Building 2F, 2-2-15 Hamamatsucho, Minato-ku, Tokyo 105-0013, Japan</td></tr>
-        <tr><th>Phone Number</th><td>Please contact us by email. (We will disclose upon legally required request.)</td></tr>
-        <tr><th>Email Address</th><td><a href="mailto:support.bun.apps@gmail.com">support.bun.apps@gmail.com</a></td></tr>
-      </tbody>
-    </table>
-  </div>
+        <table>
+            <tr>
+                <th>販売業者</th>
+                <td>BunDev</td>
+            </tr>
+            <tr>
+                <th>所在地</th>
+                <td>〒105-0013<br>東京都港区浜松町２丁目２番１５号 浜松町ダイヤビル２Ｆ</td>
+            </tr>
+            <tr>
+                <th>お問い合わせ先</th>
+                <td>support.bun.apps@gmail.com<br>※電話番号については、上記メールアドレス宛にご請求いただいた場合、遅滞なく開示します。</td>
+            </tr>
+            <tr>
+                <th>販売商品</th>
+                <td>PressNote BP Pro版（買い切り型アプリ内課金）<br>
+                    内容：血圧記録のPDF出力・印刷・共有、CSVエクスポート、アプリテーマカラーの変更、ホーム画面ウィジェットの使用（永続アンロック）</td>
+            </tr>
+            <tr>
+                <th>対応端末</th>
+                <td>Android 7.0（API レベル 24）以上を搭載したスマートフォン・タブレット</td>
+            </tr>
+            <tr>
+                <th>販売価格</th>
+                <td>¥500（税込）<br>※価格は予告なく変更される場合があります。購入時点の Google Play に表示される金額が適用されます</td>
+            </tr>
+            <tr>
+                <th>代金の支払い方法・時期</th>
+                <td>Google Play でのお支払い（クレジットカード・デビットカード・キャリア決済・Google Play ギフトカード 等）。購入確定時に即時決済されます。</td>
+            </tr>
+            <tr>
+                <th>商品の引き渡し時期</th>
+                <td>決済手続き完了後、アプリ内で即時にPro版機能が有効化されます。</td>
+            </tr>
+            <tr>
+                <th>返品・キャンセル・クーリングオフ</th>
+                <td>本商品はデジタルコンテンツのアンロックであり、購入確定後の返品・キャンセルには対応しておりません。デジタルコンテンツの提供はご購入直後に開始されるため、特定商取引法のクーリングオフ（8日間の返品権）は適用されません。<br>
+                    Google Play ストアのポリシーに基づく返金申請については <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play 購入の返金について</a> をご参照ください。</td>
+            </tr>
+            <tr>
+                <th>購入の復元</th>
+                <td>同一 Google アカウントでのアプリ再インストール・機種変更後は、アプリ内「購入を復元する」機能で Pro版をご利用いただけます（追加費用なし）。</td>
+            </tr>
+        </table>
 
-  <!-- 商品情報 -->
-  <div class="table-card">
-    <div class="table-card-title"><span class="dot"></span>商品・サービス内容</div>
-    <table>
-      <tbody>
-        <tr><th>商品名</th><td>PressNote BP Pro版（買い切り）</td></tr>
-        <tr><th>内容</th><td>以下の機能のアンロック（永続）<br>・血圧記録のPDF出力・印刷・共有<br>・血圧記録のCSVエクスポート<br>・アプリテーマカラーの変更<br>・ホーム画面ウィジェットの使用</td></tr>
-        <tr><th>対応端末</th><td>Android 7.0（API 24）以降を搭載したスマートフォン・タブレット</td></tr>
-        <tr><th>提供形態</th><td>アプリ内課金（デジタルコンテンツ）。ダウンロード・物品の発送はありません</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="table-card table-card-en">
-    <div class="table-card-title"><span class="dot"></span>Product / Service Details</div>
-    <table>
-      <tbody>
-        <tr><th>Product Name</th><td>PressNote BP Pro (one-time purchase)</td></tr>
-        <tr><th>Content</th><td>Permanent unlock of the following features:<br>· PDF export, print &amp; share of blood pressure records<br>· CSV export of blood pressure records<br>· App theme color customization<br>· Home screen widget</td></tr>
-        <tr><th>Compatible Devices</th><td>Android smartphones and tablets running Android 7.0 (API level 24) or later</td></tr>
-        <tr><th>Delivery Method</th><td>In-app purchase (digital content). No physical downloads or shipments.</td></tr>
-      </tbody>
-    </table>
-  </div>
+        <div class="footer">
+            制定日：2025年6月1日　最終更新：2025年6月1日<br>
+            © 2025 BunDev
+        </div>
+    </div>
 
-  <!-- 料金・支払い -->
-  <div class="table-card">
-    <div class="table-card-title"><span class="dot"></span>料金・支払い</div>
-    <table>
-      <tbody>
-        <tr><th>販売価格</th><td>¥500（税込）<br>※価格は予告なく変更される場合があります。購入時点の Google Play に表示される金額が適用されます</td></tr>
-        <tr><th>支払い方法</th><td>Google Play でのお支払い（クレジットカード・デビットカード・キャリア決済・Google Play ギフトカード 等）</td></tr>
-        <tr><th>支払い時期</th><td>Google Play での購入手続き完了時に即時決済</td></tr>
-        <tr><th>追加費用</th><td>なし（一度購入後の追加料金は発生しません）</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="table-card table-card-en">
-    <div class="table-card-title"><span class="dot"></span>Pricing &amp; Payment</div>
-    <table>
-      <tbody>
-        <tr><th>Price</th><td>¥500 (tax included)<br>*Prices are subject to change without notice. The price displayed on Google Play at the time of purchase applies.</td></tr>
-        <tr><th>Payment Method</th><td>Payments via Google Play (credit card, debit card, carrier billing, Google Play gift cards, etc.)</td></tr>
-        <tr><th>Payment Timing</th><td>Charged immediately upon completion of purchase on Google Play</td></tr>
-        <tr><th>Additional Fees</th><td>None. No recurring charges after a one-time purchase.</td></tr>
-      </tbody>
-    </table>
-  </div>
+    <!-- English -->
+    <div id="content-en" class="hidden">
+        <h1>Legal Notice</h1>
+        <div class="note-box">
+            This page contains disclosures required under Japan's Act on Specified Commercial Transactions. The following information relates to the sale of the Pro version (paid content) of the Android app "PressNote BP."
+        </div>
 
-  <!-- 解約・返金 -->
-  <div class="table-card">
-    <div class="table-card-title"><span class="dot"></span>キャンセル・返金</div>
-    <table>
-      <tbody>
-        <tr><th>キャンセルポリシー</th><td>本商品はデジタルコンテンツのアンロックであり、購入完了後の解約・キャンセルには対応しておりません</td></tr>
-        <tr><th>返金ポリシー</th><td>原則として返金には応じかねます。ただし、Google Play の返金ポリシーに基づく返金申請は Google Play カスタマーサポートまでお問い合わせください<br><a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener" style="font-size:13px;">Google Play 購入の返金について</a></td></tr>
-        <tr><th>購入の復元</th><td>同一 Google アカウントでのアプリ再インストール・機種変更後は、アプリ内「購入を復元する」機能で Pro版をご利用いただけます（追加費用なし）</td></tr>
-        <tr><th>クーリングオフ</th><td>デジタルコンテンツの提供はご購入直後に開始されるため、特定商取引法のクーリングオフ（8日間の返品権）は適用されません</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="table-card table-card-en">
-    <div class="table-card-title"><span class="dot"></span>Cancellation &amp; Refunds</div>
-    <table>
-      <tbody>
-        <tr><th>Cancellation Policy</th><td>As this product is an unlock of digital content, cancellation after purchase completion is not accepted.</td></tr>
-        <tr><th>Refund Policy</th><td>Refunds are generally not provided. However, refund requests under Google Play's refund policy may be directed to Google Play customer support.<br><a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener" style="font-size:12px;">Google Play refund policy</a></td></tr>
-        <tr><th>Purchase Restore</th><td>After reinstalling the App or changing devices with the same Google account, you can re-access the Pro version using the "Restore purchase" feature at no additional charge.</td></tr>
-        <tr><th>Cooling-Off Period</th><td>Since digital content delivery begins immediately upon purchase, the cooling-off period (8-day return right) under the Act on Specified Commercial Transactions does not apply.</td></tr>
-      </tbody>
-    </table>
-  </div>
+        <table>
+            <tr>
+                <th>Seller</th>
+                <td>BunDev (Independent Developer)</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>Hamamatsucho Diya Building 2F, 2-2-15 Hamamatsucho, Minato-ku, Tokyo 105-0013, Japan</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>support.bun.apps@gmail.com<br>Telephone number will be disclosed without delay upon request via the above email address.</td>
+            </tr>
+            <tr>
+                <th>Product</th>
+                <td>PressNote BP Pro (one-time in-app purchase)<br>
+                    Includes: PDF export / print / share of blood pressure records, CSV export, app theme color customization, home screen widget (permanent unlock)</td>
+            </tr>
+            <tr>
+                <th>Requirements</th>
+                <td>Android smartphones and tablets running Android 7.0 (API level 24) or higher.</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>¥500 (tax included)<br>Prices are subject to change without notice. The price displayed on Google Play at the time of purchase applies.</td>
+            </tr>
+            <tr>
+                <th>Payment Method &amp; Timing</th>
+                <td>Payments via Google Play (credit card, debit card, carrier billing, Google Play gift cards, etc.). Charged immediately upon completion of purchase.</td>
+            </tr>
+            <tr>
+                <th>Delivery</th>
+                <td>Pro version features are activated immediately within the App after payment is completed.</td>
+            </tr>
+            <tr>
+                <th>Refunds / Cancellation / Cooling-Off</th>
+                <td>Due to the nature of digital content, this product cannot be returned or cancelled after purchase. Because digital content delivery begins immediately upon purchase, the cooling-off period (8-day return right) under the Act on Specified Commercial Transactions does not apply.<br>
+                    For refund requests under Google Play's policy, please see <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play's refund policy</a>.</td>
+            </tr>
+            <tr>
+                <th>Purchase Restore</th>
+                <td>After reinstalling the App or changing devices with the same Google account, you can re-access the Pro version using the "Restore purchase" feature at no additional charge.</td>
+            </tr>
+        </table>
 
-  <!-- 動作環境 -->
-  <div class="table-card">
-    <div class="table-card-title"><span class="dot"></span>動作環境・サービス提供時期</div>
-    <table>
-      <tbody>
-        <tr><th>サービス提供時期</th><td>Google Play での購入完了後、即時にアプリ内で利用可能になります</td></tr>
-        <tr><th>動作推奨環境</th><td>Android 7.0 以降、インターネット接続環境（初回認証時）</td></tr>
-        <tr><th>サービス継続性</th><td>当開発者はサービスの継続的な提供に努めますが、サービスの変更・終了の可能性があります。終了時には事前にお知らせします</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="table-card table-card-en">
-    <div class="table-card-title"><span class="dot"></span>Operating Environment &amp; Service Availability</div>
-    <table>
-      <tbody>
-        <tr><th>Service Start</th><td>Available immediately in the App upon completion of purchase on Google Play</td></tr>
-        <tr><th>Recommended Environment</th><td>Android 7.0 or later; internet connection required (for initial authentication)</td></tr>
-        <tr><th>Service Continuity</th><td>The Developer strives to provide continuous service, but the service may be changed or terminated. Users will be notified in advance of any termination.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="note-box">
-    <div class="note-title">📌 電話番号の開示について</div>
-    本アプリは個人開発者による運営のため、電話でのサポートは行っておりません。消費者保護のための法令等により電話番号の開示が必要な場合には、メールにてご請求ください。請求を受けた場合は遅滞なく開示いたします。
-  </div>
-  <div class="note-box-en">
-    <div class="note-title">📌 Regarding Telephone Number Disclosure</div>
-    As this App is operated by an individual developer, telephone support is not available. If disclosure of a telephone number is required by consumer protection laws or similar regulations, please request it by email. We will disclose the number without delay upon receipt of such a request.
-  </div>
-
-  <div class="contact-box">
-    <p>お問い合わせ・開示請求・その他ご不明な点 / Inquiries, disclosure requests, and other questions</p>
-    <br>
-    <p>屋号 / Trade Name：BunDev</p>
-    <p>メールアドレス / Email：<a href="mailto:support.bun.apps@gmail.com">support.bun.apps@gmail.com</a></p>
-    <p>所在地 / Address：〒105-0013 東京都港区浜松町２丁目２番１５号 浜松町ダイヤビル２Ｆ</p>
-    <p style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Hamamatsucho Diya Building 2F, 2-2-15 Hamamatsucho, Minato-ku, Tokyo 105-0013, Japan</p>
-  </div>
-
-  <div class="update-note">
-    制定日 / Established: 2025年6月1日 &nbsp;|&nbsp; 最終更新 / Last Updated: 2025年6月1日<br>
-    &copy; BunDev. All rights reserved.
-  </div>
-
+        <div class="footer">
+            Established: June 1, 2025　Last Updated: June 1, 2025<br>
+            © 2025 BunDev
+        </div>
+    </div>
 </div>
+
+<script>
+function setLang(lang) {
+    document.getElementById('content-ja').classList.toggle('hidden', lang !== 'ja');
+    document.getElementById('content-en').classList.toggle('hidden', lang !== 'en');
+    document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+</script>
 </body>
 </html>
